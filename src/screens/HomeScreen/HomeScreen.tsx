@@ -11,7 +11,7 @@ export const HomeScreen = () => {
     {key: 'movies', title: 'Movies'},
     {key: 'series', title: 'Series'},
   ]);
-  const renderScene = ({route}) => <MoviesList />;
+  const renderScene = ({route}) => <MoviesList type={route.key} />;
   const renderTabBar = useCallback(
     props => (
       <TabBar

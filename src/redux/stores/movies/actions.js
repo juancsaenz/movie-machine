@@ -1,3 +1,13 @@
-import {GET_MOVIES} from './constants';
+import {GET_MOVIES, GET_SERIES} from './constants';
 
-export const getMovies = cb => ({type: GET_MOVIES, cb});
+export const getMovies = (page, cb) => ({
+  type: GET_MOVIES,
+  payload: {page},
+  cb,
+});
+
+export const getSeries = (page, cb) => ({
+  type: GET_SERIES,
+  payload: {page},
+  cb,
+});
