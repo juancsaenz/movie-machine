@@ -3,13 +3,18 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {homeTabs} from 'movie_machine/src/config/navigator';
 import {HomeScreen} from 'movie_machine/src/screens/HomeScreen';
+import {FavoritesScreen} from 'movie_machine/src/screens/FavoritesScreen';
+import {ProfileScreen} from 'movie_machine/src/screens/ProfileScreen';
+import Tabbar from 'movie_machine/src/containers/Tabbar';
 
 const Tab = createBottomTabNavigator();
 
 export default function HomeTabs() {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator tabBar={props => <Tabbar {...props} />}>
       <Tab.Screen name={homeTabs.home} component={HomeScreen} />
+      <Tab.Screen name={homeTabs.favorites} component={FavoritesScreen} />
+      <Tab.Screen name={homeTabs.profile} component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

@@ -1,10 +1,19 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {View, Text} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {rootSwitch} from 'movie_machine/src/config/navigator';
 import MainStack from './main-stack';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
+
+function HomeScreen() {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text testID="stepOne">Step One</Text>
+    </View>
+  );
+}
 
 function RootStack() {
   return (
