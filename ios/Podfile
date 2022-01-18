@@ -15,7 +15,8 @@ target 'movie_machine' do
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
-
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  
   target 'movie_machineTests' do
     inherit! :complete
     # Pods for testing
@@ -29,6 +30,7 @@ target 'movie_machine' do
 
   post_install do |installer|
     react_native_post_install(installer)
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+    installer.pods_project.build_configurations.each do |config| config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] =  "arm64"
+    end
   end
 end

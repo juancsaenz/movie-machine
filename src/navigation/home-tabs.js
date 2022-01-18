@@ -12,7 +12,11 @@ const Tab = createBottomTabNavigator();
 export default function HomeTabs() {
   return (
     <Tab.Navigator tabBar={props => <Tabbar {...props} />}>
-      <Tab.Screen name={homeTabs.home} component={HomeScreen} />
+      <Tab.Screen
+        name={homeTabs.home}
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
       <Tab.Screen name={homeTabs.favorites} component={FavoritesScreen} />
       <Tab.Screen name={homeTabs.profile} component={ProfileScreen} />
     </Tab.Navigator>
