@@ -1,7 +1,7 @@
 import React, {useEffect, useCallback, useState} from 'react';
 import PropTypes from 'prop-types';
 import {View, FlatList, Text} from 'react-native';
-
+import MovieItem from 'movie_machine/src/components/movieItem';
 import styles from './styles';
 
 function MoviesList({moviesActions, type: tabType}) {
@@ -26,11 +26,10 @@ function MoviesList({moviesActions, type: tabType}) {
       <FlatList
         data={movies}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <View>
-            <Text>{item.title}</Text>
-          </View>
-        )}
+        numColumns={3}
+        extraData={movies}
+        renderItem={({item}) => <MovieItem item={item} />}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

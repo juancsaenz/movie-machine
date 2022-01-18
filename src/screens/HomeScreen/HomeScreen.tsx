@@ -40,7 +40,6 @@ export const HomeScreen = () => {
         onIndexChange={setIndex}
         lazy
       />
-      <Text>Holaaaaa</Text>
     </View>
   );
 };
