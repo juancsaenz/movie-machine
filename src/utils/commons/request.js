@@ -57,7 +57,7 @@ export default async function request(url, receivedOptions) {
   options.headers = headers;
 
   // Execute request
-  return fetch(baseURL.concat(`${url}&api_key=${configApi.API_KEY}`), options)
+  return fetch(baseURL.concat(`${url}api_key=${configApi.API_KEY}`), options)
     .catch(handleError)
     .then(checkStatus)
     .then(parseJSON);

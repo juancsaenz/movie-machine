@@ -4,6 +4,7 @@ export const rootSwitch = {
 
 export const mainStack = {
   home_tab: 'HomeTab',
+  details: 'Details',
 };
 
 export const homeTabs = {

@@ -40,7 +40,6 @@ function MoviesList({moviesActions, type: tabType}) {
     } else if (tabType === 'series') {
       getSeries(page, handleMoviesChange);
     }
-    getMovies(page, handleMoviesChange);
   }, [page, handleMoviesChange]);
 
   if (movies.length === 0) {

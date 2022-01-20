@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {mainStack} from 'movie_machine/src/config/navigator';
 import HomeTabs from './home-tabs';
+import {DetailsScreen} from 'movie_machine/src/screens/DetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ function MainStack() {
         name={mainStack.home_tab}
         component={HomeTabs}
       />
+      <Stack.Screen name={mainStack.details} component={DetailsScreen} />
     </Stack.Navigator>
   );
 }
